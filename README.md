@@ -10,6 +10,10 @@
 [![Poster](https://img.shields.io/badge/Poster-Pillow-FF6B35)]()
 [![Contest](https://img.shields.io/badge/2026-麦当劳程序员创意开发大赛-DA291C)]()
 
+<p align="center">
+  <img src="assets/poster-real-sample.png" width="380" alt="开饭海报样张（9:16 竖版）">
+</p>
+
 ---
 
 ## 🍟 一句话看懂
@@ -60,7 +64,7 @@ Agent 自动完成：
 | 🗣️ **大白话点单** | 随口说"板烧不要生菜""可乐换无糖"，Agent 解析成结构化订单 |
 | 🧮 **最优价精算** | 自动构造多套方案（纯券 / 积分兑换 / 组合），以 MCP 实价为准选最省 |
 | 👥 **一键 AA 分账** | 按各人餐品金额占比，把优惠公平分摊到每个人 |
-| 🖼️ **开饭海报** | 生成可保存、可转发的战报图（本群"麦当劳之王"也在上面） |
+| 🖼️ **开饭海报** | 9:16 竖版战报图，全中文、环形饼图分账、含"本群麦当劳之王"，可直接发朋友圈/小红书 |
 | 🔗 **一键下单** | 用户确认后输出 MCP 返回的支付链接 |
 
 ---
@@ -93,14 +97,21 @@ Agent 会走完 解析 → 精算 → 分账 → 海报 → （可选）下单 �
 ```bash
 pip install Pillow
 echo '{
-  "group_name":"本群开饭战报",
-  "items":[{"speaker":"我","name":"巨无霸","spec":"不要酸瓜","qty":1},
-           {"speaker":"小李","name":"麦辣鸡腿堡","spec":"可乐换无糖","qty":1}],
-  "best":{"code":"C","label":"积分兑换 + 券点其余","payable":46.5,"original":78.0,"savings":31.5,"points":800},
-  "share":[{"speaker":"我","amount":30.0},{"speaker":"小李","amount":16.5}]
+  "group_name":"10.10 开饭 · 3人局",
+  "user_quote":"开个饭局，我们 3 个人：我巨无霸不要酸瓜，小李麦辣鸡腿堡可乐换无糖，小张两份薯条一杯可乐。",
+  "ai_did":["听懂了每人的口味定制","拉取了门店可售菜单","实时算出精确总价","给 3 人分好 AA 账单","出好这张可转发海报"],
+  "items":[{"speaker":"你","name":"巨无霸","spec":"不要酸瓜","qty":1},
+           {"speaker":"小李","name":"麦辣鸡腿堡","spec":"可乐换无糖","qty":1},
+           {"speaker":"小张","name":"中薯条","spec":"","qty":2}],
+  "best":{"code":"A","label":"纯现金","payable":84.0,"original":84.0,"savings":0.0,"points":0},
+  "share":[{"speaker":"小李","amount":34.0},{"speaker":"你","amount":27.0},{"speaker":"小张","amount":23.0}]
 }' | python scripts/poster.py
-# 生成 ./poster.png
+# 生成 ./poster.png（9:16 竖版，适合朋友圈/小红书）
 ```
+
+**海报设计（v7）**：全中文紧凑竖版，叙事主线「点单，只需一句话 → 3 秒搞定」，含本单明细、麦门之王、环形饼图分账。突出**方便快捷好玩**，不主打价格。
+
+**字体无需自备**：脚本三级兜底（汉仪雅酷黑 → macOS 冬青黑体 → 华文黑体 → Noto → PIL 默认），任何机器 clone 即跑。装了汉仪雅酷黑视觉最佳，可用 `MCD_FONT_*` 环境变量指定。
 
 ---
 
