@@ -88,15 +88,27 @@ version: 1.0.0
 按每人餐品小计占比，把最优方案实付金额分到每个人，输出每人应付。金额合计必须守恒。
 
 ### 第 5 步 · 生成开饭海报
-调 `scripts/poster.py` 生成一张可保存转发的战报图（含：本单明细、最优方案与省了多少、AA 分账、"本群麦当劳之王"趣味战报）。
+调 `scripts/poster.py` 生成一张 9:16 竖版、可保存转发的战报图（突出"一句话下单"的轻松体验）。
 
 ```bash
-python scripts/poster.py
+POSTER_JSON='{...}' POSTER_OUT=poster.png python scripts/poster.py
 ```
 
-- 输入：通过环境变量传 JSON（`POSTER_JSON`）或从 stdin 读 JSON，字段见脚本顶部注释。
-- 输出：`poster.png`（当前目录）或 `POSTER_OUT` 指定路径。
-- 中文字体自动探测，可用 `MCD_FONT_REGULAR` / `MCD_FONT_BOLD` 覆盖。
+**输入 JSON 字段：**
+
+| 字段 | 必填 | 说明 |
+|---|---|---|
+| `items` | ✓ | `[{speaker, name, spec, qty}]` 本单明细 |
+| `best` | ✓ | `{code, label, payable, original, savings, points}` 最优方案 |
+| `share` | ✓ | `[{speaker, amount}]` AA 分账（金额需守恒） |
+| `group_name` | | 场次名 / 副标题 |
+| `king` | | 麦门之王（缺省取 share[0]） |
+| `user_quote` | | **用户原话**（海报"你说"板块，强烈建议传，效果最好） |
+| `ai_did` | | **它替你做的事**（`list[str]`）。**必须传本次真实动作**（如"匹配了你存的配送地址""核对了凌晨夜市库存"）；不传则用通用缺省文案 |
+
+> ⚠️ `ai_did` 与 `user_quote` 是海报的核心叙事（"一句话 → 3 秒搞定"）。**若省略 user_quote，"你说"板块自动隐藏**，版面仍成立。
+
+**字体**：三级兜底，永不崩——汉仪雅酷黑（本机自装，视觉最佳）→ macOS 冬青黑体 Hiragino Sans GB → 华文黑体 STHeiti → Noto Sans CJK → PIL 默认。可用 `MCD_FONT_LIGHT/REGULAR/BOLD/NUM` 覆盖。别人 clone 无需装字体也能出图。
 
 生成后用 present_files 把海报交给用户。
 
@@ -113,8 +125,10 @@ python scripts/poster.py
 1. **本单明细** — 谁点了啥（含规格、数量）
 2. **最优方案** — 方案名 + 实付 + 比原价省多少 + 用了哪些券/积分
 3. **AA 分账** — 每人该付多少（含"本群麦当劳之王"彩蛋）
-4. **海报** — 附 `poster.png` 预览
+4. **开饭海报** — 附 `poster.png` 预览（9:16 竖版，适合朋友圈/小红书）
 5. （可选）**支付链接** — 用户确认下单后给出
+
+生成海报时要记得传 `user_quote`（用户原话）和 `ai_did`（本次真实动作清单）——这是海报叙事"一句话 → 3 秒搞定"的灵魂。
 
 风格：简洁直接，数字说话，不啰嗦。
 
