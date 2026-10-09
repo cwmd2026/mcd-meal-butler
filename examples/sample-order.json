@@ -1,0 +1,13 @@
+{
+  "description": "示例：一段群聊经解析后的结构化订单（对应 examples 中的演示场景）",
+  "group_name": "产品部摸鱼群",
+  "people_count": 8,
+  "budget_per_head": 30,
+  "meal_type": "外送",
+  "items": [
+    {"speaker": "王姐", "raw_text": "麦辣鸡腿堡套餐，可乐换无糖", "name": "麦辣鸡腿堡", "spec": "换无糖", "qty": 1},
+    {"speaker": "小李", "raw_text": "板烧鸡腿堡，不要生菜", "name": "板烧鸡腿堡", "spec": "不要生菜", "qty": 1},
+    {"speaker": "阿May", "raw_text": "随大家，来个巨无霸", "name": "巨无霸", "spec": "", "qty": 1},
+    {"speaker": "小李", "raw_text": "麦乐鸡5块和香芋派也来点", "name": "麦乐鸡5块", "spec": "", "qty": 1}
+  ]
+}
