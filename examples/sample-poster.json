@@ -1,23 +1,25 @@
 {
-  "group_name": "示例开饭局（Mock 演示）",
+  "group_name": "10.10 开饭 · 3 人麦麦局",
+  "user_quote": "开个饭局，我们 3 个人：我巨无霸不要酸瓜，小李麦辣鸡腿堡可乐换无糖，小张两份薯条一杯可乐。",
+  "ai_did": [
+    "听懂了每人的口味定制",
+    "拉取了门店可售菜单",
+    "实时算出精确总价",
+    "比了券与积分的最优组合",
+    "给 3 人分好 AA 账单",
+    "出好这张可转发海报"
+  ],
   "items": [
-    {"speaker": "我", "name": "巨无霸", "spec": "不要酸瓜", "qty": 1},
+    {"speaker": "你", "name": "巨无霸", "spec": "不要酸瓜", "qty": 1},
     {"speaker": "小李", "name": "麦辣鸡腿堡", "spec": "可乐换无糖", "qty": 1},
     {"speaker": "小张", "name": "中薯条", "spec": "", "qty": 2},
-    {"speaker": "老张", "name": "麦旋风", "spec": "", "qty": 1}
+    {"speaker": "小张", "name": "中可乐", "spec": "", "qty": 1}
   ],
-  "best": {
-    "code": "C",
-    "label": "积分兑换 + 券点其余",
-    "payable": 62.5,
-    "original": 95.0,
-    "savings": 32.5,
-    "points": 800
-  },
+  "best": {"code": "A", "label": "纯现金", "payable": 84.0, "original": 84.0, "savings": 0.0, "points": 0},
   "share": [
-    {"speaker": "小李", "amount": 30.0},
-    {"speaker": "我", "amount": 26.5},
-    {"speaker": "老张", "amount": 6.0}
+    {"speaker": "小李", "amount": 34.0},
+    {"speaker": "你", "amount": 27.0},
+    {"speaker": "小张", "amount": 23.0}
   ],
   "king": "小李"
 }
