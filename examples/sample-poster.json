@@ -1,0 +1,23 @@
+{
+  "group_name": "示例开饭局（Mock 演示）",
+  "items": [
+    {"speaker": "我", "name": "巨无霸", "spec": "不要酸瓜", "qty": 1},
+    {"speaker": "小李", "name": "麦辣鸡腿堡", "spec": "可乐换无糖", "qty": 1},
+    {"speaker": "小张", "name": "中薯条", "spec": "", "qty": 2},
+    {"speaker": "老张", "name": "麦旋风", "spec": "", "qty": 1}
+  ],
+  "best": {
+    "code": "C",
+    "label": "积分兑换 + 券点其余",
+    "payable": 62.5,
+    "original": 95.0,
+    "savings": 32.5,
+    "points": 800
+  },
+  "share": [
+    {"speaker": "小李", "amount": 30.0},
+    {"speaker": "我", "amount": 26.5},
+    {"speaker": "老张", "amount": 6.0}
+  ],
+  "king": "小李"
+}
