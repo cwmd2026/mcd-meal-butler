@@ -1,0 +1,15 @@
+# 凭据与环境
+.env
+.env.*
+!.env.example
+
+# 生成物
+poster.png
+*.png.bak
+__pycache__/
+*.pyc
+
+# 系统/IDE
+.DS_Store
+.idea/
+.vscode/
