@@ -1,0 +1,560 @@
+{
+  "_comment": "离线 Mock 数据：结构与 2026-10-09 真实接口实测一致（真实门店 1450713 菜单抽样脱敏）。价格字段单位：元（calculate-price 返回为分，需÷100）。真实字段以服务端实时返回为准。",
+  "query-nearby-stores": {
+    "data": [
+      {
+        "storeName": "麦当劳上海黄浦华旭国际大厦餐厅",
+        "address": "南京东路街道西藏中路336号",
+        "storeCode": "1450713",
+        "beCode": "",
+        "distance": 300,
+        "reservation": false,
+        "businessStatus": true
+      },
+      {
+        "storeName": "麦当劳上海福州路餐厅",
+        "address": "福州路666号",
+        "storeCode": "1450441",
+        "beCode": "",
+        "distance": 600,
+        "reservation": false,
+        "businessStatus": true
+      }
+    ]
+  },
+  "query-meals": {
+    "data": {
+      "categories": [
+        {
+          "name": "人气热卖",
+          "meals": [
+            {
+              "code": "9900016076",
+              "tags": [
+                "心形薯饼同款比心"
+              ]
+            },
+            {
+              "code": "9900016075",
+              "tags": [
+                "浓郁奶香拉丝芝士"
+              ]
+            },
+            {
+              "code": "9900016073",
+              "tags": [
+                "韩式辣椒黄油风味"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "精选单人餐",
+          "meals": [
+            {
+              "code": "9900015183",
+              "tags": [
+                "经典精选",
+                "爆款"
+              ]
+            },
+            {
+              "code": "9900004236",
+              "tags": [
+                "麦金卡"
+              ]
+            },
+            {
+              "code": "9900015184",
+              "tags": [
+                "麦金卡"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "鸡肉汉堡\n/卷",
+          "meals": [
+            {
+              "code": "9900016075",
+              "tags": [
+                "上新",
+                "浓郁奶香拉丝芝士"
+              ]
+            },
+            {
+              "code": "9900016073",
+              "tags": [
+                "上新",
+                "韩式辣椒黄油风味"
+              ]
+            },
+            {
+              "code": "521953",
+              "tags": [
+                "上新",
+                "浓郁奶香拉丝芝士"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "小食拼盘\n/多人餐",
+          "meals": [
+            {
+              "code": "9900016076",
+              "tags": [
+                "上新",
+                "心形薯饼同款比心"
+              ]
+            },
+            {
+              "code": "9900015726",
+              "tags": [
+                "上新",
+                "韩式风味"
+              ]
+            },
+            {
+              "code": "9900015730",
+              "tags": [
+                "小食拼盘",
+                "随心拼"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "蘸酱炸鸡",
+          "meals": [
+            {
+              "code": "9900016079",
+              "tags": [
+                "蘸酱炸鸡",
+                "韩式芝士风味酱上新"
+              ]
+            },
+            {
+              "code": "9900016096",
+              "tags": [
+                "蘸酱炸鸡",
+                "韩式芝士风味酱上新"
+              ]
+            },
+            {
+              "code": "9900015729",
+              "tags": [
+                "蘸酱炸鸡",
+                "蘸酱炸鸡新吃法"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "随心配\n1+1",
+          "meals": [
+            {
+              "code": "9900015187",
+              "tags": [
+                "超值百种组合随心配"
+              ]
+            },
+            {
+              "code": "9900015188",
+              "tags": [
+                "超值百种组合随心配"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "巨无霸\n牛鱼肉堡",
+          "meals": [
+            {
+              "code": "9900000888",
+              "tags": [
+                "麦金卡"
+              ]
+            },
+            {
+              "code": "9900005466",
+              "tags": [
+                "套餐",
+                "100%纯牛肉"
+              ]
+            },
+            {
+              "code": "1100",
+              "tags": [
+                "单品",
+                "100%纯牛肉"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "炸鸡",
+          "meals": [
+            {
+              "code": "521966",
+              "tags": [
+                "蘸酱",
+                "韩式风味",
+                "浓郁芝香"
+              ]
+            },
+            {
+              "code": "521797",
+              "tags": [
+                "蘸酱",
+                "使用动物奶油"
+              ]
+            },
+            {
+              "code": "521815",
+              "tags": [
+                "上新",
+                "韩式风味"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "大堡口福\n单人餐",
+          "meals": [
+            {
+              "code": "9900015160",
+              "tags": [
+                "大口吃肉好快乐"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "小食甜品\n/其他",
+          "meals": [
+            {
+              "code": "521954",
+              "tags": [
+                "上新"
+              ]
+            },
+            {
+              "code": "521986",
+              "tags": [
+                "上新",
+                "趁热拉丝",
+                "奶香醇厚"
+              ]
+            },
+            {
+              "code": "9900016082",
+              "tags": [
+                "上新",
+                "口口酥脆",
+                "含一份蘸酱"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "麦咖啡™",
+          "meals": [
+            {
+              "code": "515946",
+              "tags": [
+                "限定特惠",
+                "浓浓黑巧"
+              ]
+            },
+            {
+              "code": "515955",
+              "tags": [
+                "限定特惠",
+                "浓浓黑巧"
+              ]
+            },
+            {
+              "code": "507411",
+              "tags": [
+                "限定特惠"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "饮品",
+          "meals": [
+            {
+              "code": "521817",
+              "tags": [
+                "上新",
+                "清爽上新"
+              ]
+            },
+            {
+              "code": "521337",
+              "tags": [
+                "冷饮",
+                "冰爽上新"
+              ]
+            },
+            {
+              "code": "9900008751",
+              "tags": [
+                "冷饮"
+              ]
+            }
+          ]
+        }
+      ],
+      "meals": {
+        "9900016076": {
+          "name": "“我就喜欢”鸡薯双全盒",
+          "currentPrice": "15.9",
+          "originalPrice": "28.5",
+          "discountType": null
+        },
+        "9900016075": {
+          "name": "龙焰芝士棒鸡腿堡三件套",
+          "currentPrice": "29.9",
+          "originalPrice": "50.5",
+          "discountType": null
+        },
+        "9900016073": {
+          "name": "龙焰鸡腿堡三件套",
+          "currentPrice": "26.9",
+          "originalPrice": "47.5",
+          "discountType": null
+        },
+        "9900015183": {
+          "name": "精选单人餐三件套",
+          "currentPrice": "34.5",
+          "originalPrice": "41",
+          "discountType": null
+        },
+        "9900004236": {
+          "name": "人气超值四件套随心选",
+          "currentPrice": "29",
+          "originalPrice": "58",
+          "discountType": "随单购麦金卡优惠"
+        },
+        "9900015184": {
+          "name": "牛肉汉堡四件套随心选",
+          "currentPrice": "32",
+          "originalPrice": "54",
+          "discountType": "随单购麦金卡优惠"
+        },
+        "521953": {
+          "name": "龙焰芝士棒鸡腿堡",
+          "currentPrice": "27",
+          "originalPrice": "27",
+          "discountType": null
+        },
+        "9900015726": {
+          "name": "韩式甜辣酱鸡块8块",
+          "currentPrice": "19.9",
+          "originalPrice": "30",
+          "discountType": null
+        },
+        "9900015730": {
+          "name": "BFF四宫格小食盘",
+          "currentPrice": "40.8",
+          "originalPrice": "54.5",
+          "discountType": null
+        },
+        "9900016079": {
+          "name": "蘸酱脆皮鸡柳",
+          "currentPrice": "11.9",
+          "originalPrice": "17.5",
+          "discountType": null
+        },
+        "9900016096": {
+          "name": "蘸酱韩式甜辣酱鸡块",
+          "currentPrice": "11.9",
+          "originalPrice": "18",
+          "discountType": null
+        },
+        "9900015729": {
+          "name": "蘸酱BFF四宫格小食盘",
+          "currentPrice": "43.8",
+          "originalPrice": "57.5",
+          "discountType": null
+        },
+        "9900015187": {
+          "name": "人气经典随心配",
+          "currentPrice": "13.9",
+          "originalPrice": "13.9",
+          "discountType": null
+        },
+        "9900015188": {
+          "name": "精选超值随心配",
+          "currentPrice": "13.9",
+          "originalPrice": "13.9",
+          "discountType": null
+        },
+        "9900000888": {
+          "name": "巨无霸四件套",
+          "currentPrice": "32",
+          "originalPrice": "58.5",
+          "discountType": "随单购麦金卡优惠"
+        },
+        "9900005466": {
+          "name": "巨无霸三件套",
+          "currentPrice": "36.5",
+          "originalPrice": "49",
+          "discountType": null
+        },
+        "1100": {
+          "name": "巨无霸",
+          "currentPrice": "25.5",
+          "originalPrice": "25.5",
+          "discountType": null
+        },
+        "521966": {
+          "name": "韩式烟熏芝士风味酱",
+          "currentPrice": "3",
+          "originalPrice": "3",
+          "discountType": null
+        },
+        "521797": {
+          "name": "北美招牌牧场酱",
+          "currentPrice": "3",
+          "originalPrice": "3",
+          "discountType": null
+        },
+        "521815": {
+          "name": "韩式甜辣酱鸡块",
+          "currentPrice": "15",
+          "originalPrice": "15",
+          "discountType": null
+        },
+        "9900015160": {
+          "name": "大堡口福三件套",
+          "currentPrice": "23.9",
+          "originalPrice": "47",
+          "discountType": null
+        },
+        "521954": {
+          "name": "麦当劳联名复古棒球帽",
+          "currentPrice": "34.9",
+          "originalPrice": "39.9",
+          "discountType": "随单购麦金卡优惠"
+        },
+        "521986": {
+          "name": "马苏里拉拉丝芝士条",
+          "currentPrice": "15",
+          "originalPrice": "15",
+          "discountType": null
+        },
+        "9900016082": {
+          "name": "心形薯饼5块",
+          "currentPrice": "14.5",
+          "originalPrice": "14.5",
+          "discountType": null
+        },
+        "515946": {
+          "name": "浓浓黑巧（冰/热）",
+          "currentPrice": "21",
+          "originalPrice": "21",
+          "discountType": null
+        },
+        "515955": {
+          "name": "浓浓燕麦黑巧（冰/热）",
+          "currentPrice": "23",
+          "originalPrice": "23",
+          "discountType": null
+        },
+        "507411": {
+          "name": "麦咖啡™美式",
+          "currentPrice": "9.9",
+          "originalPrice": "19",
+          "discountType": "随单购麦金卡优惠"
+        },
+        "521817": {
+          "name": "【美汁源】“多汁柠柠”",
+          "currentPrice": "12",
+          "originalPrice": "12",
+          "discountType": null
+        },
+        "521337": {
+          "name": "鲜萃冰咖",
+          "currentPrice": "11.5",
+          "originalPrice": "11.5",
+          "discountType": null
+        },
+        "9900008751": {
+          "name": "可乐",
+          "currentPrice": "9.5",
+          "originalPrice": "9.5",
+          "discountType": null
+        }
+      }
+    }
+  },
+  "calculate-price": {
+    "_comment": "真实返回价格单位为分；productOriginalPrice/productPrice/originalPrice/discount/price 均为分",
+    "success": true,
+    "code": 200,
+    "data": {
+      "productOriginalPrice": 7500,
+      "productPrice": 7500,
+      "originalPrice": 7500,
+      "discount": 0,
+      "price": 7500,
+      "productList": [
+        {
+          "productCode": "9900005466",
+          "productName": "巨无霸三件套",
+          "quantity": 1,
+          "originalSubtotal": 3650,
+          "subtotal": 3650
+        },
+        {
+          "productCode": "4810",
+          "productName": "中薯条",
+          "quantity": 1,
+          "originalSubtotal": 1350,
+          "subtotal": 1350
+        },
+        {
+          "productCode": "9900004835",
+          "productName": "麦乐鸡经典中套餐",
+          "quantity": 1,
+          "originalSubtotal": 2500,
+          "subtotal": 2500
+        }
+      ]
+    }
+  },
+  "query-my-account": {
+    "data": {
+      "availablePoint": "0",
+      "accumulativePoint": "0",
+      "frozenPoint": "0",
+      "currentMothExpirePoint": "0",
+      "currency": "麦享会积分"
+    }
+  },
+  "query-my-coupons": {
+    "_comment": "真实返回为 markdown 文本（含券图/有效期/标签），此处为结构化示例",
+    "coupons": [
+      {
+        "couponId": "c_meishi7",
+        "name": "新人专享-中杯美式7折",
+        "price": "13.3",
+        "tag": "到店专用",
+        "validTime": "2026-10-09 00:00 ~ 2026-11-07 23:59"
+      }
+    ]
+  },
+  "campaign-calendar": {
+    "activities": [
+      {
+        "name": "麦麦省领券周",
+        "date": "2026-10-09 ~ 2026-10-12",
+        "status": "进行中"
+      }
+    ]
+  }
+}
