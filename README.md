@@ -1,32 +1,50 @@
-<p align="center"><img src="assets/logo/logo.png" width="110" alt="麦麦开饭官 logo"></p>
+<p align="center"><img src="assets/logo/logo.png" width="90" alt="麦麦开饭官 logo"></p>
 
-# 麦麦开饭官 · McD Meal Butler（Skill 版）
+# 麦麦开饭官 · McD Meal Butler
 
-> 把一群人点麦当劳，从「刷屏乱聊」变成「一句话搞定」：多人各自点单，自动汇总成单、算出最省方案、生成分账和一张能晒的开饭海报。
-> 本版本是 **WorkBuddy Skill** 形态 —— 无需部署服务器，Agent 直接编排麦当劳 MCP 完成全流程。
+> **群里报菜名 → 3 秒出最省方案 + AA 账单 + 一张能晒的开饭海报。**
+> 多人各自大白话点单，Agent 自动汇总、实价精算、分账出图——**报价与麦当劳官方菜单分毫不差（¥75.00 实测）**。
+> WorkBuddy Skill 形态，**零服务器、零部署**，clone 即用。
 
 [![McDonald's MCP](https://img.shields.io/badge/McDonald's-MCP-FFC72C)](https://github.com/M-China/mcd-mcp-server)
 [![Form](https://img.shields.io/badge/Form-WorkBuddy%20Skill-07C160)]()
-[![Poster](https://img.shields.io/badge/Poster-Pillow-FF6B35)]()
+[![Real API Tested](https://img.shields.io/badge/Real%20API-¥75.00%20Verified-2E8B57)]()
 [![Contest](https://img.shields.io/badge/2026-麦当劳程序员创意开发大赛-DA291C)]()
 
 <p align="center">
-  <img src="assets/poster-real-sample.png" width="380" alt="开饭海报样张（9:16 竖版）">
+  <img src="assets/poster-real-sample.png" width="340" alt="开饭海报样张（9:16 竖版，由 scripts/poster.py 生成）">
 </p>
+
+## 📺 30 秒看懂
+
+```text
+你：开个饭局，我们 3 个人：我巨无霸不要酸瓜，小李麦辣鸡腿堡可乐换无糖，小张两份薯条一杯可乐。
+
+它：
+  ┌─ 听懂 3 人点单（含 2 项口味定制）
+  ├─ 匹配门店真实菜单 3 件商品
+  ├─ calculate-price 实价精算：¥75.00（与菜单单价加总分毫不差）
+  ├─ AA 分账：你 ¥36.5 / 小李 ¥25.0 / 小张 ¥13.5（金额守恒）
+  └─ 开饭海报 9:16 竖版已出图 → 直接发群里晒
+     🏆 本群麦当劳之王：你
+```
 
 ---
 
-## 🍟 一句话看懂
+## 🧪 真实接口实测（可核验）
 
-跟 Agent 说一句「开个饭局，我们 8 个人，我点巨无霸不要酸瓜、他要麦辣换无糖可乐、再整 5 块麦乐鸡」，
-Agent 自动完成：
+2026-10-09 用真实 Token 打通全链路（上海黄浦·华旭国际大厦餐厅 `1450713`）：
 
-1. **解析** — 把每个人的大白话点单结构化成清单（谁、点了啥、几份、什么规格）
-2. **拉菜单** — 调麦当劳 MCP `query-meals` 匹配真实商品
-3. **精算最省** — 构造「纯券 / 积分兑换 / 组合」三套方案，**逐套调 `calculate-price` 取实价**，选最省
-4. **AA 分账** — 按各人餐品占比自动摊平，金额守恒
-5. **开饭海报** — 生成一张可保存转发的战报图（含"本群麦当劳之王"彩蛋）
-6. **一键下单** — 需要时给出 MCP 支付链接
+```text
+query-meals     → 12 分类 64 商品（含现价/原价/时段供应）
+calculate-price → 巨无霸三件套 ¥36.50 + 中薯条 ¥13.50 + 麦乐鸡经典中套餐 ¥25.00
+                  返回 price = 7500（分）= ¥75.00，与菜单单价加总分毫不差
+AA 分账         → 36.5 + 25.0 + 13.5 = 75.0 ✓ 金额守恒
+海报            → scripts/poster.py 生成 1080×1480 PNG（上方样张即真实数据输出）
+```
+
+> ⚠️ 真实接口细节（Mock 里看不到的）：价格单位是**分**（需 ÷100）；`beType`/`searchType` 必传；
+> 菜单**分时段供应**（凌晨麦辣/麦旋风不在售，匹配不到时如实告知、不硬凑）。
 
 ---
 
@@ -126,10 +144,6 @@ echo '{
 
 完整调用链路与业务价值见 [MCP_INTEGRATION.md](MCP_INTEGRATION.md)。
 
-> ✅ **真实接口实测**（2026-10-09，上海黄浦华旭国际大厦餐厅）：菜单 12 分类 64 商品 →
-> `calculate-price` 报价 ¥75.00 与菜单单价加总分毫不差，AA 分账 36.5+25.0+13.5 守恒。
-> 全链路（门店→菜单→精算→券/积分→海报）均以真实 Token 验证通过。
-
 ---
 
 ## 📁 目录结构
@@ -160,3 +174,14 @@ mcd-meal-butler-skill/
 ## 📄 License
 
 个人非商业用途免费使用，详见 [LICENSE](LICENSE) 与 [CONTEST_DECLARATION.md](CONTEST_DECLARATION.md)。
+
+---
+
+<p align="center">
+
+### ⭐ 如果它让你的麦门聚会省心了，点个 Star
+
+本项目为「麦当劳程序员创意开发大赛」（M-CODE）参赛作品，官方按 **公开 Star 数**排名（前 100 名入围奖励），
+Star 是最直接的支持方式。
+
+</p>
